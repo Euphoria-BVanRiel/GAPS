@@ -5,6 +5,10 @@
   "main": "generator.js",
   "scripts": {
     "generate": "node generator.js examples/aggregate.json schema.graphql",
-    "test": "node test/run.js"
+    "test": "node test/run.js && node test/parquet/test.js",
+    "parquet:example": "node scripts/parquet-example.js"
+  },
+  "dependencies": {
+    "parquetjs-lite": "latest"
   }
 }

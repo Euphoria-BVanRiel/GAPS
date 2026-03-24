@@ -30,7 +30,34 @@ Or use the npm script:
 npm run generate
 ```
 
-The output file `schema.graphql` will contain the generated GraphQL types.# GAPS
+The output file `schema.graphql` will contain the generated GraphQL types.
+
+Parquet (read/write)
+--------------------
+
+This project includes a small example showing how to read and write Apache Parquet files using Node.js.
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the Parquet example which writes `examples/data.parquet` and reads it back:
+
+```bash
+npm run parquet:example
+```
+
+Files:
+- `lib/parquet.js`: helper functions `writeParquet(schemaDef, rows, outPath)` and `readParquet(filePath)`.
+- `scripts/parquet-example.js`: example script that writes `examples/data.parquet` from `examples/parquet-data.json` and reads it back.
+
+Next steps (future):
+- Create indexes over Parquet files and map GraphQL types to row-level accessors.
+- Generate input types and mutations that write updates into Parquet-backed storage.
+
+# GAPS
 GraphQL Apache.Parquet document storage solution
 
 ## Licensing

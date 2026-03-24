@@ -1,0 +1,4 @@
+[
+  { "id": "1", "name": "Widget A", "price": 9.99, "quantity": 10, "createdAt": "2026-03-24T12:00:00Z" },
+  { "id": "2", "name": "Widget B", "price": 19.95, "quantity": 5, "createdAt": "2026-03-24T12:05:00Z" }
+]
