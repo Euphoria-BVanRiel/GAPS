@@ -74,6 +74,24 @@ Next steps (future):
 - Create indexes over Parquet files and map GraphQL types to row-level accessors.
 - Generate input types and mutations that write updates into Parquet-backed storage.
 
+Running the GraphQL server
+--------------------------
+
+This project includes a minimal GraphQL server that exposes queries and mutations for each aggregate spec found in `examples/`.
+
+Start the server:
+
+```bash
+npm install
+npm start
+```
+
+Server features:
+- Queries: list all rows for each aggregate (e.g. `orders`).
+- Mutations: `create<Name>`, `update<Name>`, `delete<Name>` — mutations update Parquet storage. `create` currently rewrites the Parquet file (append is implemented by reading + writing).
+
+Server file: `server.js` (Apollo Server using `lib/parquet.js` for read/write).
+
 # GAPS
 GraphQL Apache.Parquet document storage solution
 
