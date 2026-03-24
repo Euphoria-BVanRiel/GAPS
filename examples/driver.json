@@ -1,0 +1,19 @@
+{
+  "name": "Driver",
+  "fields": [
+    { "name": "id", "type": "id", "nonNull": true },
+    { "name": "name", "type": "string", "nonNull": true },
+    { "name": "externalCode", "type": "string", "nonNull": false },
+    { "name": "status", "type": "string", "nonNull": true },
+    { "name": "createdAt", "type": "datetime", "nonNull": true },
+    {
+      "name": "certifications",
+      "type": "object",
+      "isList": true,
+      "fields": [
+        { "name": "name", "type": "string", "nonNull": true },
+        { "name": "expiresAt", "type": "datetime", "nonNull": false }
+      ]
+    }
+  ]
+}

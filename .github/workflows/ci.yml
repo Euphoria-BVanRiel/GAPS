@@ -14,5 +14,7 @@ jobs:
           node-version: '18'
       - name: Install
         run: npm install
+      - name: Validate aggregate specs
+        run: npm run validate
       - name: Run tests
         run: npm test

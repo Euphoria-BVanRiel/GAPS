@@ -18,19 +18,23 @@ JSON format (brief):
 
 Usage:
 
-Run the generator and write SDL to `schema.graphql`:
+Run the generator on a single file or a directory of specs and write SDL to `schema.graphql`:
 
 ```
+# single file
 node generator.js examples/aggregate.json schema.graphql
+
+# directory (generates types for every .json in the directory)
+node generator.js examples schema.graphql
 ```
 
-Or use the npm script:
+Or use the npm script to generate from the `examples` folder:
 
 ```
 npm run generate
 ```
 
-The output file `schema.graphql` will contain the generated GraphQL types.
+The output file `schema.graphql` will contain the combined GraphQL types for all aggregate roots found.
 
 Parquet (read/write)
 --------------------
@@ -52,6 +56,19 @@ npm run parquet:example
 Files:
 - `lib/parquet.js`: helper functions `writeParquet(schemaDef, rows, outPath)` and `readParquet(filePath)`.
 - `scripts/parquet-example.js`: example script that writes `examples/data.parquet` from `examples/parquet-data.json` and reads it back.
+
+Validation
+----------
+
+Aggregate spec files are validated against a JSON Schema before code generation. The schema is at `schema/aggregate.schema.json`.
+
+Usage (with validation):
+
+```
+node generator.js examples schema.graphql schema/aggregate.schema.json
+```
+
+If the schema fails to compile or is not present, the generator will emit a warning and proceed without validation.
 
 Next steps (future):
 - Create indexes over Parquet files and map GraphQL types to row-level accessors.

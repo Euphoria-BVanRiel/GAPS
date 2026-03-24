@@ -1,0 +1,22 @@
+{
+  "name": "Shift",
+  "fields": [
+    { "name": "id", "type": "id", "nonNull": true },
+    { "name": "driverId", "type": "id", "nonNull": true },
+    { "name": "vehicleId", "type": "id", "nonNull": true },
+    { "name": "startTime", "type": "datetime", "nonNull": true },
+    { "name": "endTime", "type": "datetime", "nonNull": false },
+    { "name": "status", "type": "string", "nonNull": true },
+    {
+      "name": "trips",
+      "type": "object",
+      "isList": true,
+      "fields": [
+        { "name": "tripId", "type": "id", "nonNull": true },
+        { "name": "start", "type": "datetime", "nonNull": true },
+        { "name": "end", "type": "datetime", "nonNull": true },
+        { "name": "distanceKm", "type": "float", "nonNull": false }
+      ]
+    }
+  ]
+}

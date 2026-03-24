@@ -1,0 +1,21 @@
+{
+  "name": "Vehicle",
+  "fields": [
+    { "name": "id", "type": "id", "nonNull": true },
+    { "name": "licensePlate", "type": "string", "nonNull": true },
+    { "name": "externalCode", "type": "string", "nonNull": false },
+    { "name": "type", "type": "string", "nonNull": true },
+    { "name": "status", "type": "string", "nonNull": true },
+    { "name": "createdAt", "type": "datetime", "nonNull": true },
+    {
+      "name": "devices",
+      "type": "object",
+      "isList": true,
+      "fields": [
+        { "name": "deviceId", "type": "id", "nonNull": true },
+        { "name": "type", "type": "string", "nonNull": true },
+        { "name": "installedAt", "type": "datetime", "nonNull": false }
+      ]
+    }
+  ]
+}
