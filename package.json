@@ -1,0 +1,10 @@
+{
+  "name": "graphql-aggregate-generator",
+  "version": "0.1.0",
+  "private": true,
+  "main": "generator.js",
+  "scripts": {
+    "generate": "node generator.js examples/aggregate.json schema.graphql",
+    "test": "node test/run.js"
+  }
+}

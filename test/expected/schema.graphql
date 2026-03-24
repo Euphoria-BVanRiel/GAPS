@@ -1,0 +1,13 @@
+type OrderItems {
+  productId: ID!
+  quantity: Int!
+  price: Float!
+}
+
+type Order {
+  id: ID!
+  total: Float!
+  status: String!
+  createdAt: String!
+  items: [OrderItems]
+}
